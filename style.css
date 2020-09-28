@@ -98,20 +98,20 @@ nav ul li, footer ul li {
 h1 {
 	color: #EE4C7C;
 	font-family: 'Tahoma', 'Arial', 'Sans-Serif'; 
-	font-size: 30pt; 
+	font-size: 40pt; 
 	text-align: center;
  	position: static;
 }
 .brand {
 	color:  #EE4C7C;
 	font-family: 'Courier New', 'Arial', 'Sans-Serif'; 
-	font-size: 45pt;
+	font-size: 60pt;
 }
 .subtitle{
 	color: #EE4C7C;
 	text-align: center;
 	font-family: 'Georgia'; 
-	font-size: 6.5pt; 
+	font-size: 8.6pt; 
 	position: static;
 }
 .parallax{
@@ -128,7 +128,7 @@ h1 {
 h2 {
 	color: #9A1750;
 	text-align: left;
-	font-size: 10pt; 
+	font-size: 15pt; 
 	margin-top:1em;
 	margin-bottom:1em;
 	margin-left: 7em;
@@ -137,21 +137,24 @@ h2 {
 h3 {
 	color: #9A1750;
 	text-align: left;
-	font-size: 7.5pt; 
+	font-size: 11.5pt; 
 	margin-top:1em;
 	margin-bottom:1em;
 	margin-left: 9.3em;
 	margin-right: 9.3em;
 }
 ul{
+	font-size: 11.5pt; 
 	margin-left: 12em;
 	margin-right: 12em;
 }
 form{
+	font-size: 11.5pt; 
 	margin-left: 12em;
 	margin-right: 12em;
 }
 table{
+	font-size: 11.5pt; 
 	margin-left: 12em;
 	margin-right: 12em;
 }
@@ -161,7 +164,7 @@ p {
 	text-align: left;
 	padding: 50em, 10em, 10em, 50em;
 	font-family: 'Times New Roman'; 
-	font-size: 7pt; 
+	font-size: 14pt; 
 }
 nav ul, footer ul {
 	color: #5D001E;
