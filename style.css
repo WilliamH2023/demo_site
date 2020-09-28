@@ -1,6 +1,8 @@
 /* style.css */
-@media only screen and (max-device-width: 900px){
-
+.note{
+ 	margin-left: 12em;
+  	margin-right: 12em;
+  	color: #9A1750;
 }
 body {
 	background-color: #E3E2DF;
