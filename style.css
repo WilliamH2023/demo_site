@@ -131,8 +131,8 @@ h2 {
 	font-size: 20pt; 
 	margin-top:1em;
 	margin-bottom:1em;
-	margin-left: 4em;
-	margin-right: 4em;
+	margin-left: 2.5em;
+	margin-right: 2.5em;
 }
 h3 {
 	color: #9A1750;
@@ -140,18 +140,18 @@ h3 {
 	font-size: 15pt; 
 	margin-top:1em;
 	margin-bottom:1em;
-	margin-left: 8em;
-	margin-right: 8em;
+	margin-left: 4em;
+	margin-right: 4em;
 }
 ul{
 	font-size: 13pt; 
-	margin-left: 4em;
-	margin-right: 4em;
+	margin-left: 6em;
+	margin-right: 6em;
 }
 form{
 	font-size: 13pt; 
-	margin-left: 4em;
-	margin-right: 4em;
+	margin-left: 6em;
+	margin-right: 6em;
 }
 table{
 	font-size: 13pt; 
@@ -173,8 +173,8 @@ nav ul, footer ul {
 	padding: 50em, 10em, 10em, 50em;
 	list-style: none;
 	font-weight: bold; 
-	margin-left: 4em;
-	margin-right: 4em;
+	margin-left: 3em;
+	margin-right: 3em;
 }
 nav ul li, footer ul li {
 	
@@ -184,6 +184,10 @@ nav ul li, footer ul li {
 	margin-top: 1em;
 	margin-bottom: 1em;
 }
-
+.note{
+  	margin-left: 4em;
+  	margin-right: 4em;
+  	color: #9A1750;	
+}
 }	
 	
