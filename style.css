@@ -128,39 +128,39 @@ h1 {
 h2 {
 	color: #9A1750;
 	text-align: left;
-	font-size: 15pt; 
+	font-size: 20pt; 
 	margin-top:1em;
 	margin-bottom:1em;
-	margin-left: 7em;
-	margin-right: 7em;
+	margin-left: 4em;
+	margin-right: 4em;
 }
 h3 {
 	color: #9A1750;
 	text-align: left;
-	font-size: 11.5pt; 
+	font-size: 15pt; 
 	margin-top:1em;
 	margin-bottom:1em;
-	margin-left: 9.3em;
-	margin-right: 9.3em;
+	margin-left: 8em;
+	margin-right: 8em;
 }
 ul{
-	font-size: 11.5pt; 
-	margin-left: 12em;
-	margin-right: 12em;
+	font-size: 13pt; 
+	margin-left: 4em;
+	margin-right: 4em;
 }
 form{
-	font-size: 11.5pt; 
-	margin-left: 12em;
-	margin-right: 12em;
+	font-size: 13pt; 
+	margin-left: 4em;
+	margin-right: 4em;
 }
 table{
-	font-size: 11.5pt; 
-	margin-left: 12em;
-	margin-right: 12em;
+	font-size: 13pt; 
+	margin-left: 4em;
+	margin-right: 4em;
 }
 p {
-	margin-left: 10em;
-	margin-right:10em;
+	margin-left: 2em;
+	margin-right:2em;
 	text-align: left;
 	padding: 50em, 10em, 10em, 50em;
 	font-family: 'Times New Roman'; 
@@ -173,14 +173,14 @@ nav ul, footer ul {
 	padding: 50em, 10em, 10em, 50em;
 	list-style: none;
 	font-weight: bold; 
-	margin-left: 9em;
-	margin-right: 9em;
+	margin-left: 4em;
+	margin-right: 4em;
 }
 nav ul li, footer ul li {
 	
 	color: #5D001E;
 	display: inline;
-	margin-right: 1em;
+	margin-right: 2em;
 	margin-top: 1em;
 	margin-bottom: 1em;
 }
