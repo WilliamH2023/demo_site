@@ -41,51 +41,56 @@ h2 {
 	color: #9A1750;
 	text-align: left;
 	font-size: 20pt; 
-	
-	margin-left: 5cm;
-	margin-right: 5cm;
+	margin-top:1em;
+	margin-bottom:1em;
+	margin-left: 7em;
+	margin-right: 7em;
 }
 h3 {
 	color: #9A1750;
 	text-align: left;
 	font-size: 15pt; 
-	margin-left: 5cm;
-	margin-right: 5cm;
+	margin-top:1em;
+	margin-bottom:1em;
+	margin-left: 9.3em;
+	margin-right: 9.3em;
 }
 ul{
-	margin-left: 5cm;
-	margin-right: 5cm;
+	margin-left: 12em;
+	margin-right: 12em;
 }
 form{
-	margin-left: 5cm;
-	margin-right: 5cm;
+	margin-left: 12em;
+	margin-right: 12em;
 }
 table{
-	margin-left: 5cm;
-	margin-right: 5cm;
+	margin-left: 12em;
+	margin-right: 12em;
 }
 p {
-	position: fixed;	
+	margin-left: 10em;
+	margin-right:10em;
 	text-align: left;
-	margin-left: 5cm;
-	margin-right: 5cm;
+	padding: 50em, 10em, 10em, 50em;
+	font-family: 'Times New Roman'; 
 	font-size: 14pt; 
 }
 nav ul, footer ul {
 	color: #5D001E;
 	font-size: 1em; 
 	font-family: 'Helvetica', 'Arial', 'Sans-Serif'; 
-	padding: 50px, 10px, 10px, 50px;
+	padding: 50em, 10em, 10em, 50em;
 	list-style: none;
 	font-weight: bold; 
-	margin-left: 3.7cm;
-	margin-right: 3.7cm;
+	margin-left: 9em;
+	margin-right: 9em;
 }
 nav ul li, footer ul li {
 	
 	color: #5D001E;
 	display: inline;
-	margin-top: 20px;
-	margin-right: 20px;
+	margin-right: 1em;
+	margin-top: 1em;
+	margin-bottom: 1em;
 }
 	
