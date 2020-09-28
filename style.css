@@ -1,0 +1,88 @@
+/* style.css */
+body {
+	background-color: #E3E2DF;
+	margin-bottom: 5cm;
+}
+
+h1 {
+	color: #EE4C7C;
+	font-family: 'Tahoma', 'Arial', 'Sans-Serif'; 
+	font-size: 60pt; 
+	text-align: center;
+ 	position: static;
+}
+.brand {
+	color:  #EE4C7C;
+	font-family: 'Courier New', 'Arial', 'Sans-Serif'; 
+	font-size: 90pt;
+}
+.subtitle{
+	color: #EE4C7C;
+	text-align: center;
+	font-family: 'Georgia'; 
+	font-size: 13pt; 
+	position: static;
+}
+.parallax{
+	background-image: url("dance.jpg");
+	
+	min-height: 500px
+	position: relative;
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+h2 {
+	color: #9A1750;
+	text-align: left;
+	font-size: 20pt; 
+	
+	margin-left: 5cm;
+	margin-right: 5cm;
+}
+h3 {
+	color: #9A1750;
+	text-align: left;
+	font-size: 15pt; 
+	margin-left: 5cm;
+	margin-right: 5cm;
+}
+ul{
+	margin-left: 5cm;
+	margin-right: 5cm;
+}
+form{
+	margin-left: 5cm;
+	margin-right: 5cm;
+}
+table{
+	margin-left: 5cm;
+	margin-right: 5cm;
+}
+p {
+	position: fixed;	
+	text-align: left;
+	margin-left: 5cm;
+	margin-right: 5cm;
+	font-size: 14pt; 
+}
+nav ul, footer ul {
+	color: #5D001E;
+	font-size: 1em; 
+	font-family: 'Helvetica', 'Arial', 'Sans-Serif'; 
+	padding: 50px;
+	list-style: none;
+	font-weight: bold; 
+	margin-left: 3.7cm;
+	margin-right: 3.7cm;
+}
+nav ul li, footer ul li {
+	
+	color: #5D001E;
+	display: inline;
+	margin-top: 1cm;
+	margin-right: 20px;
+}
+	
