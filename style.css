@@ -1,11 +1,6 @@
 /* style.css */
-@media only screen and (max-device-width: 991px){
-	.small{
-		max-width: 100%;
-		margin: auto;
-		text-align: center;
-		font-family: 'arial';
-	}
+@media only screen and (max-device-width: 900px){
+
 }
 body {
 	background-color: #E3E2DF;
@@ -80,7 +75,7 @@ nav ul, footer ul {
 	color: #5D001E;
 	font-size: 1em; 
 	font-family: 'Helvetica', 'Arial', 'Sans-Serif'; 
-	padding: 50px;
+	padding: 50px, 10px, 10px, 50px;
 	list-style: none;
 	font-weight: bold; 
 	margin-left: 3.7cm;
@@ -90,7 +85,7 @@ nav ul li, footer ul li {
 	
 	color: #5D001E;
 	display: inline;
-	margin-top: 1cm;
+	margin-top: 20px;
 	margin-right: 20px;
 }
 	
