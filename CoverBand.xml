@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href = "xmlstyle.css" ?>
+<CoverBandListing>
+	<song>
+		<title> Africa </title>
+		<artist> Toto </artist>
+		<musicGenre> Classic Rock </musicGenre>
+		<releaseYear> 1982 </releaseYear>
+	</song>
+	
+	<song>
+		<title> Get Lucky </title>
+		<artist> Daft Punk </artist>
+		<featureArtist> Pharrell Williams, Nile Rodgers </featureArtist>
+		<musicGenre> Funk </musicGenre>
+		<releaseYear> 2013 </releaseYear>
+	</song>
+
+	<song>
+		<title> Material Girl </title>
+		<artist> Madonna </artist>
+		<musicGenre> Pop </musicGenre>
+		<releaseYear> 1984 </releaseYear>
+	</song>
+	
+	<song>
+		<title> When Doves Cry </title>
+		<artist> Prince </artist>
+		<musicGenre> Pop </musicGenre>
+		<releaseYear> 1984 </releaseYear>
+	</song>
+	
+	<song>
+		<title> Ocean Eyes </title>
+		<artist> Billie Eilish </artist>
+		<musicGenre> Alternative/Indie </musicGenre>
+		<releaseYear> 2016 </releaseYear>
+	</song>
+	
+	<song>
+		<title> Physical </title>
+		<artist> Dua Lipa </artist>
+		<musicGenre> Pop </musicGenre>
+		<releaseYear> 2020 </releaseYear>
+	</song>
+
+	<song>
+		<title> Human Nature </title>
+		<artist> Michael Jackson </artist>
+		<musicGenre> Pop </musicGenre>
+		<releaseYear> 1982 </releaseYear>
+	</song>
+	
+	<song>
+		<title> P.Y.T. </title>
+		<artist> Michael Jackson </artist>
+		<musicGenre> Pop </musicGenre>
+		<releaseYear> 1982 </releaseYear>
+	</song>
+	
+	<song>
+		<title> This Is Not America </title>
+		<artist> David Bowie </artist>
+		<musicGenre> New Wave/Post-funk </musicGenre>
+		<releaseYear> 2003 </releaseYear>
+	</song>
+	
+	<song>
+		<title> Fields Of Gold </title>
+		<artist> Sting </artist>
+		<musicGenre> Rock </musicGenre>
+		<releaseYear> 2017 </releaseYear>
+	</song>
+	
+</CoverBandListing>
+

@@ -1,0 +1,8 @@
+@charset "utf-8";
+/* CSS Document */
+
+CoverBandListing {display:block; border-bottom: 1px solid #1E3FD1; padding : 8px 0;}
+song title {font-size: 30px; font-weight: 700;}
+song artist {display:block;}
+song musicGenre {display:block;}
+song releaseYear {display:block;}
