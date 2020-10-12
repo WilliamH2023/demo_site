@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta charset = "utf-8"> 
+	<title> Quick Pick </title>
+</head>
+	
+<body>
+	<script language = "javascript">
+		var input = prompt("Enter winning numbers separated by a space", "");
+		input = input.split(" ");
+		var input_num = input.sort(function(a, b){return a-b});
+		var input_lucky = prompt("Enter lucky ball number", "");
+		
+
+		var num_array = [];
+		for ( i = 0; i < 5; i++ ){
+			num_array.push( Math.round(Math.random()*47+1) );
+		}	
+		num_array.sort(function(a, b){return a-b});
+		var lucky_num = Math.round(Math.random()*17+1);
+			
+		var count = 0;
+		var lucky_count = 0;
+		for (i = 0; i < 5; i++){
+			if(num_array[i] == input_num[i]) {count++;}
+		}
+		if (input_lucky == lucky_num) {lucky_count++;}
+		
+		
+		var payout = 0;
+		if (count == 0 && lucky_count){
+			payout = 4;
+		}
+		else if (count == 1 && lucky_count){
+			payout = 6;
+		}
+		else if (count == 2){
+			payout = lucky_count? 25:3;
+		} 
+		else if (count == 3){
+			payout = lucky_count? 150:20;
+		}
+		else if (count == 4){
+			payout = lucky_count? 5000:200;
+		}
+		else if (count == 5){
+			payout = lucky_count? "7000 a WEEK for LIFE":"25000 a YEAR for LIFE";
+		}	
+		
+
+		document.write("The quick pick numbers are: " + num_array[0] + " " 
+		+  num_array[1] + " " + num_array[2]  + " " + num_array[3] + " "
+		+ num_array[4] + "<br/>" ); 
+		document.write("The lucky ball number is " + lucky_num + "<br/>" + "<br/>");
+		
+		document.write("The winning numbers are: " + input_num[0] + " " 
+		+  input_num[1] + " " + input_num[2]  + " " + input_num[3] + " "
+		+ input_num[4] + "<br/>" ); 
+		document.write("The lucky ball number is " + input_lucky + "<br/>" + "<p>" + "</p>");
+		
+		document.write("You matched with " + count + " number and " + lucky_count + " lucky ball" + "<br/>");
+		document.write("You win! Your payout is: $ " + payout);
+
+
+
+		
+	</script>
+</body>
+	
+</html>
