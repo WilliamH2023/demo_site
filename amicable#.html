@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta charset = "utf-8"> 
+	<title> Amicable Number </title>
+	
+	<script language = "javascript">
+	
+		function isFactor(p_factor, num){
+			if(num % p_factor == 0) { return true;}
+			return false;
+		}
+		
+		function showArray(arr){
+			if (arr instanceof Array) {
+				document.write( "<div>");
+				for (i=0; i < arr.length; i++){
+					var temp = arr[i];
+					if (i==0) {												document.write(	temp );		}	
+					else{ 													document.write( " " + temp );	}
+				}
+				document.write("</div>");
+			}
+		}
+		
+		function addArray(arr){
+			if (arr instanceof Array) {
+				var sum = 0;
+				for (i=0; i < arr.length; i++){
+					sum += arr[i];
+				}
+				return sum;
+			}
+		}
+		
+		function getFactors(num){
+			var p_factor = [];
+			for (i=1; i < num; i++){					
+				if ( isFactor ( i, num ) ) {							 p_factor.push(i);		}
+			}
+			return p_factor;
+		}	
+		
+		function checkInput(){
+			input = document.getElementById("input").value;
+			input = input.split(" ");
+			factor1 = getFactors( input[0] );
+			factor2 = getFactors( input[1] );
+			document.write("The factors of " + input[0] + " are <br/>");
+			showArray(factor1);
+			document.write("The factors of " + input[1] + " are <br/>");
+			showArray(factor2);
+			
+			document.write("The sum of factors of " + input[0] + " is " + addArray (factor1) + "<br/>");
+			document.write("The sum of factors of " + input[1] + " is " + addArray (factor2)  + "<br/>");
+			
+			if (addArray (factor1) == addArray (factor2) ) { 
+				document.write("They are amicable");
+			}
+			else {
+				document.write("They are not amicable");
+			}
+		
+		}
+		
+				//TEST CODE FOR FUNCTIONS
+		/*
+		// test for isFactor(p_factor, num)
+		for (i=1; i < 100; i++){
+			var validate = isFactor(i, 100)
+			if (validate){							document.write(  i + " is a factor of 100 " + "<br/>");		}
+		}
+		
+		//test for showArray(arr)
+		var num = [];
+		for (i=1; i < 21; i++){					num.push(i);			}
+		showArray(num);
+		
+		//test for addArray(arr)
+		var num = [];
+		for (i=1; i < 21; i++){					num.push(i);			}
+		document.write("The sum is " + addArray(num) + "<br/>");
+				
+		//test for getFactors(num)
+		var p_factor = getFactors(100) ;
+		showArray( p_factor );
+
+		*/
+
+	</script>
+
+</head>
+	
+<body>
+
+	<h1> Welcome to Amicable Number Checker! </h1>
+	<p>  A pair of numbers are amicable if their factors (excluding themselves) add up to each other. </p>
+	
+	<form>
+		Enter 2 numbers separated by a space: <input type="text" name="input" id="input"> <br/>
+		<input type="button" value="Check" name="btn1" id="btn1" onclick="checkInput()">
+	</form> 
+	
+	
+</body>
+	
+</html>
