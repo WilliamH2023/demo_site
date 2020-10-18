@@ -45,15 +45,23 @@
 		function checkInput(){
 			input = document.getElementById("input").value;
 			input = input.split(" ");
+			
+			if (input[0] < 1 || input[1] < 1) {
+				document.write("Invalid Input");
+				return;
+			}
 			factor1 = getFactors( input[0] );
 			factor2 = getFactors( input[1] );
+
 			document.write("The factors of " + input[0] + " are <br/>");
 			showArray(factor1);
 			document.write("The factors of " + input[1] + " are <br/>");
 			showArray(factor2);
 			
-			document.write("The sum of factors of " + input[0] + " is " + addArray (factor1) + "<br/>");
-			document.write("The sum of factors of " + input[1] + " is " + addArray (factor2)  + "<br/>");
+			document.write("The sum of factors of " + input[0] + " is " 
+											+ addArray (factor1) + "<br/>");
+			document.write("The sum of factors of " + input[1] + " is " 
+											+ addArray (factor2)  + "<br/>");
 			
 			if (addArray (factor1) == addArray (factor2) ) { 
 				document.write("They are amicable");
@@ -64,7 +72,7 @@
 		
 		}
 		
-				//TEST CODE FOR FUNCTIONS
+		//TEST CODE FOR FUNCTIONS
 		/*
 		// test for isFactor(p_factor, num)
 		for (i=1; i < 100; i++){
@@ -95,7 +103,8 @@
 <body>
 
 	<h1> Welcome to Amicable Number Checker! </h1>
-	<p>  A pair of numbers are amicable if their factors (excluding themselves) add up to each other. </p>
+	<p>  A pair of numbers are amicable if their factors (excluding themselves) 
+			add up to each other. </p>
 	
 	<form>
 		Enter 2 numbers separated by a space: <input type="text" name="input" id="input"> <br/>
