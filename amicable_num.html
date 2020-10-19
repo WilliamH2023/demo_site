@@ -50,20 +50,20 @@
 				document.write("Invalid Input");
 				return;
 			}
-			factor1 = getFactors( input[0] );
-			factor2 = getFactors( input[1] );
+			factor0 = getFactors( input[0] );
+			factor1 = getFactors( input[1] );
 
 			document.write("The factors of " + input[0] + " are <br/>");
-			showArray(factor1);
+			showArray(factor0);
 			document.write("The factors of " + input[1] + " are <br/>");
-			showArray(factor2);
+			showArray(factor1);
 			
 			document.write("The sum of factors of " + input[0] + " is " 
-											+ addArray (factor1) + "<br/>");
+											+ addArray (factor0) + "<br/>");
 			document.write("The sum of factors of " + input[1] + " is " 
-											+ addArray (factor2)  + "<br/>");
+											+ addArray (factor1)  + "<br/>");
 			
-			if (addArray (factor1) == addArray (factor2) ) { 
+			if ((addArray (factor0) == input[1]) && (addArray (factor1) == input[0])) { 
 				document.write("They are amicable");
 			}
 			else {
