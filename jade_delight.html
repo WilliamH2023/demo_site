@@ -136,7 +136,8 @@ $(document).ready(function(){
 			if (!lastName) { errorMessage += "Last name empty! \r\n"						;}
 			if (!phoneNumber) { errorMessage += "Phone number not valid! \r\n"	;}
 			if (!address) {	errorMessage += "Address empty! \r\n"								;}
-			if (errorMessage != "") {			alert(errorMessage)                   ;}
+			if (errorMessage != "") {			alert(errorMessage)                   ;
+									return					;}
 
 			var message = displayConfirmation();
 			alert(message);
