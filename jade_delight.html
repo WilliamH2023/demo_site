@@ -1,0 +1,215 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="https://code.jquery.com/jquery-3.5.1.js"
+integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+crossorigin="anonymous">
+</script>
+<title>Jade Delight</title>
+</head>
+
+<body>
+<script language="javascript">
+
+function MenuItem(name, cost)
+{
+	this.name = name;
+	this.cost=cost;
+}
+
+menuItems = new Array(
+	new MenuItem("Chicken Chop Suey", 4.5),
+	new MenuItem("Sweet and Sour Pork", 6.25),
+	new MenuItem("Shrimp Lo Mein", 5.25),
+	new MenuItem("Moo Shi Chicken", 6.5),
+	new MenuItem("Fried Rice", 2.35)
+);
+
+function makeSelect(name, minRange, maxRange)
+{
+	var t= "";
+	t = "<select name='" + name + "' size='1'>";
+	for (j=minRange; j<=maxRange; j++)
+	   t += "<option>" + j + "</option>";
+	t+= "</select>"; 
+	return t;
+}
+
+$(document).ready(function(){	
+	
+	//when another radio button is clicked, the address will appear/disappear
+	$('input[type="radio"]').change(
+		function(){
+			$('p:contains(Street:)').slideToggle();
+			$('p:contains(City:)').slideToggle();
+			$('input[type="text"][name="street"]').slideToggle();
+			$('input[type="text"][name="city"]').slideToggle();
+		}
+	);
+	
+	//if dropdown is changed
+	$('select').change(
+		function(){
+			var quantity = this.value; //the new selected quantity
+			var index = this.name[4]; //the index of the new select
+			
+			//update new partial cost
+			for (var i = 0; i < 5; i++) {
+				if (this.name[4] == i) {
+					var cost = this.value * menuItems[i].cost;
+					cost = cost.toFixed(2);
+					document.forms[0].cost[i].value = cost;
+				}
+			}
+			
+			//update subtotal, total, tax
+			var subtotal = 0;
+			for (var i = 0; i < 5; i++) {
+				subtotal += parseFloat(document.forms[0].cost[i].value);
+			}
+			var tax = (0.0625*subtotal).toFixed(2);
+			var total = parseFloat(subtotal) + parseFloat(tax);
+			$('input[type="text"][name="subtotal"]').val(subtotal);
+			$('input[type="text"][name="tax"]').val(tax);
+			$('input[type="text"][name="total"]').val(total);
+		}
+	);
+	
+	function validateLastName(){
+		var lastName = $('input[type="text"][name="lname"]').val();
+		if (lastName != "") {
+			return true;
+		}
+		return false;
+	};
+	
+	function validatePhoneNumber(){
+		var phoneNumber = $('input[type="text"][name="phone"]').val();
+		//case 1: e.g.:1234567890
+		if (phoneNumber.length == 10) {								return true;				}
+		//case 2: e.g.:123-456-7890
+		else if (phoneNumber.length == 12 && phoneNumber[3]=="-" 
+							&& phoneNumber[7] == "-") {	
+																									return true;
+		}
+		//case 3: invalid
+		return false;
+	}
+	
+	function validateAddress(){
+		if ($('input[type="radio"]:checked').val() == "pickup") {	return true;		}
+		if ($('input[type="text"][name="street"]').val() == "") {	return false;   }
+		if ($('input[type="text"][name="city"]').val() == "") {		return false;		}
+
+		return true;
+	}
+	
+	function displayConfirmation(){
+		var message = "Thank you for your order! ";
+		if ($('input[type="radio"]:checked').val() == "pickup") {
+				message += "Pickup time is 15 min later. \r\n"	;
+		}
+		else if ($('input[type="radio"]:checked').val() == "delivery") {	
+				message += "Delivery time is 30 min later. \r\n"	;
+		}
+		message += "You have ordered: \r\n";
+		
+		num_item = $('select option:selected').text() ;
+		for (var i = 0; i < 5; i++) {
+				message += num_item[i] + " "+ menuItems[i].name + "\r\n";
+		}
+		message += "Your total amount is $" 
+								+ $('input[type="text"][name="total"]').val();
+		return message;
+		
+	}
+	
+	$('input[type="submit"]').click(
+		function(){
+			var lastName = validateLastName();
+			var phoneNumber = validatePhoneNumber();
+			var address = validateAddress();
+			
+			//display error message if there is any
+			var errorMessage = "";
+			if (!lastName) { errorMessage += "Last name empty! \r\n"						;}
+			if (!phoneNumber) { errorMessage += "Phone number not valid! \r\n"	;}
+			if (!address) {	errorMessage += "Address empty! \r\n"								;}
+			if (errorMessage != "") {			alert(errorMessage)                   ;}
+
+			var message = displayConfirmation();
+			alert(message);
+		}
+	)
+	
+});
+
+
+</script>
+
+<h1>Jade Delight</h1>
+<form>
+
+<p>First Name: <input type="text"  name='fname' /></p>
+<p>Last Name*:  <input type="text"  name='lname' /></p>
+<p>Street: <input type="text"  name='street' /></p>
+<p>City: <input type="text"  name='city' /></p>
+<p>Phone*: <input type="text"  name='phone' /></p>
+<p> 
+	<input type="radio"  name="p_or_d" value = "pickup" checked="checked"/>Pickup  
+	<input type="radio"  name='p_or_d' value = 'delivery'/>
+	Delivery
+</p>
+<table border="0" cellpadding="3">
+  <tr>
+    <th>Select Item</th>
+    <th>Item Name</th>
+    <th>Cost Each</th>
+    <th>Total Cost</th>
+  </tr>
+<script language="javascript">
+
+  var s = "";
+  for (i=0; i< menuItems.length; i++)
+  {
+	  s += "<tr><td>";
+	  s += makeSelect("quan" + i, 0, 10);
+	  s += "</td><td>" + menuItems[i].name + "</td>";
+	  s += "<td> $ " + menuItems[i].cost.toFixed(2) + "</td>";
+	  s += "<td>$<input type='text' name='cost'/></td></tr>";
+  }
+  document.writeln(s);
+	
+	//default setup: choose delivery button, address stays hidden
+	$('p:contains(Street:)').hide();
+	$('p:contains(City:)').hide();
+	$('input[type="text"][name="street"]').hide();
+	$('input[type="text"][name="city"]').hide();
+	
+	//default value: $0.00
+	var default_cost = 0;
+	default_cost = default_cost.toFixed(2);
+	for (var i = 0; i < 5; i++) {
+		document.forms[0].cost[i].value = default_cost;
+	}
+	
+</script>
+
+
+</table>
+<p>Subtotal: 
+   $<input type="text"  name='subtotal' id="subtotal" />
+</p>
+<p>Mass tax 6.25%:
+  $ <input type="text"  name='tax' id="tax" />
+</p>
+<p>Total: $ <input type="text"  name='total' id="total" />
+</p>
+
+
+<input type = "submit" value = "Submit Order" />
+
+</form>
+</body>
+</html>
