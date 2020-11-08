@@ -7,10 +7,10 @@
   },
   
   {
-  "title": "Get Lucky",
-  "artist": "Daft Punk ft. Pharrell Williams, Nile Rodgers",
-  "musicGenre": "Funk",
-  "releaseYear": 2013,
+  "title": "Don't Start Now",
+  "artist": "Dua Lipa",
+  "musicGenre": "Pop",
+  "releaseYear": 2020,
   },
   
   {
@@ -67,5 +67,5 @@
   "artist": "Sting",
   "musicGenre": "Rock",
   "releaseYear": 2017,
-  },
+  }
 ]
