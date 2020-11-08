@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+	<title>Currency Exchange Rate API</title>
+	<meta charset="utf-8"/>
+	<script>
+		function getCurrencyExchangeRate() {
+			/* Step 1: Make instance of request object...
+			...to make HTTP request after page is loaded*/
+			request = new XMLHttpRequest();
+			console.log("1 - request object created");
+ 
+			// Step 2: Set the URL for the AJAX request to be the JSON file
+		
+			request.open("GET", "http://apilayer.net/api/live?access_key=c89da602020150d12ed555a532a020eb&currencies=EUR,GBP,CAD,CNY&source=USD&format=1", true);
+			console.log("2 - opened request file");
+ 
+			// Step 3: set up event handler/callback
+
+			request.onreadystatechange = function() {
+				console.log("3 - readystatechange event fired.");
+ 
+				if (request.readyState == 4 && request.status == 200) {
+
+					// Step 5: wait for done + success
+					console.log("5 - response received");
+					result = request.responseText;
+					alert(result);
+					currencyRate = JSON.parse(result);
+					
+					document.getElementById("data1").innerHTML ="current exchange rate from USD to EUR: " + currencyRate["quotes"]["USDEUR"]; 
+					document.getElementById("data2").innerHTML ="current exchange rate from USD to GBP: " + currencyRate["quotes"]["USDGBP"]; 
+					document.getElementById("data3").innerHTML ="current exchange rate from USD to CAD: " + currencyRate["quotes"]["USDCAD"]; 
+					document.getElementById("data4").innerHTML ="current exchange rate from USD to CNY: " + currencyRate["quotes"]["USDCNY"]; 
+				}
+				else if (request.readyState == 4 && request.status != 200) {
+
+					document.getElementById("data1").innerHTML = "Something is wrong!  Check the logs to see where this went off the rails";
+
+				}
+
+				else if (request.readyState == 3) {
+
+					document.getElementById("data1").innerHTML = "Too soon!  Try again";
+
+				}
+
+			}
+		// Step 4: fire off the HTTP request
+			request.send();
+			console.log("4 - Request sent");
+		}
+	</script>
+</head>
+
+
+<body onload="getCurrencyExchangeRate()">
+
+	<h1>Currency Exchange Rate</h1>
+	<div id="data1">Loading...</div>
+	<div id="data2"></div>
+	<div id="data3"></div>
+	<div id="data4"></div>
+	<div id="question">
+		<br/> <br/>
+		<p>This is an API that shows currency exchange rate and it displays the live
+		currency exchange rate for 168 world currencies. </p>
+		<p>This API comes from https://currencylayer.com/ </p>
+		<p>I chose to display 4 currency exchange rates from dollar(USD) to:<br/>
+		euro(EUR), pound(GBP), canadian dollar(CAD), and yuan(CNY).</p>
+		<p>This API can firstly shows the live currency exchange rate which can be helpful for international trade<br/>
+		and it can further complete the currency conversion from any amount of any currency with more coding.</p>
+		
+	</div>
+
+give two applications where this API would be helpful.
+</body>
+</html>
