@@ -1,0 +1,71 @@
+[
+  {
+  "title": "Africa",
+  "artist": "Toto",
+  "musicGenre": "Classic Rock",
+  "releaseYear": 1982,
+  },
+  
+  {
+  "title": "Get Lucky",
+  "artist": "Daft Punk ft. Pharrell Williams, Nile Rodgers",
+  "musicGenre": "Funk",
+  "releaseYear": 2013,
+  },
+  
+  {
+  "title": "Material Girl",
+  "artist": "Madonna",
+  "musicGenre": "Pop",
+  "releaseYear": 1984,
+  },
+
+  {
+  "title": "When Doves Cry",
+  "artist": "Prince",
+  "musicGenre": "Pop",
+  "releaseYear": 1984,
+  },
+  
+  {
+  "title": "Ocean Eyes",
+  "artist": "Billie Eilish",
+  "musicGenre": "Alternative",
+  "releaseYear": 2016,
+  },
+  
+  {
+  "title": "Physical",
+  "artist": "Dua Lipa",
+  "musicGenre": "Pop",
+  "releaseYear": 2020,
+  },
+  
+  {
+  "title": "Human Nature",
+  "artist": "Michael Jackson",
+  "musicGenre": "Pop",
+  "releaseYear": 1982,
+  },
+  
+  {
+  "title": "P.Y.T.",
+  "artist": "Michael Jackson",
+  "musicGenre": "Pop",
+  "releaseYear": 1982,
+  },
+  
+  {
+  "title": "This Is Not America",
+  "artist": "David Bowie",
+  "musicGenre": "New Wave",
+  "releaseYear": 2003,
+  },
+  
+  {
+  "title": "Fields Of Gold",
+  "artist": "Sting",
+  "musicGenre": "Rock",
+  "releaseYear": 2017,
+  },
+]
