@@ -1,31 +1,96 @@
 <!doctype html>
 <html>
 <head>
-<meta charset="utf-8">
-<title>JSON Cover Band</title>
+	<title>JSON Coverband Set List</title>
+	<meta charset="utf-8"/>
 	<script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
 	<!--script language="javascript" src="animals.json"></script-->
 </head>
 
+
 <body>
+	<h1>JSON Coverband Set List</h1>
 	<script language="javascript">
-	$.get( "http://www.secretcheese.com/secretcheese.com/comp20hosting//William_Huang/JSON_coverband/coverband.json", 
+	//initial display of songs
+	$.get( "https://williamh2023.github.io/demo_site/coverband.json", 
 			function( data ) {
 			
 			str = JSON.stringify(data);
-			document.write(str);
-			/*strHTML= "";
-			data.forEach(function(animal) { 
-				strHTML += "<li>" 
-					+ animal.name + " : " + animal.type + "</li>";
+			document.getElementById("rawString").innerHTML =str;
+			
+			strTable= "<table>";
+			data.forEach(function(song) { 
+				strTable += "<tr><b>" + song.title + "</b><br>" 
+													+ "Artist: " + song.artist + "<br>"
+													+ "Genre: " + song.musicGenre + "<br>"
+													+ "Released " + song.releaseYear + "<br><br></tr>";
 			}) 
-			strHTML += "</ul>";
-			document.write (strHTML);  */
+			
+			strTable += "</table>";
+			document.getElementById("userDisplay").innerHTML =strTable;
 			
 	})
+	
+	
+	
+	//updates the page when filtering
+	$(document).ready(function(){	
+		
+		$('input[type="submit"]').click(
+			function(){
+						//get the selected genre
+						var selectedGenre = $('#genreFilter option:selected').val();
+						
+						//get data from JSON each time the user filters
+						$.get( "https://williamh2023.github.io/demo_site/coverband.json", 
+								function( data ) {
+								
+								//maintain the rawString
+								str = JSON.stringify(data);
+								document.getElementById("rawString").innerHTML =str;
+								
+								strTable= "<table>";
+								data.forEach(function(song) {
+									
+									//if selected null, update to default display
+									if (selectedGenre=="") {
+										strTable += "<tr><b>" + song.title + "</b><br>" 
+																		+ "Artist: " + song.artist + "<br>"
+																		+ "Genre: " + song.musicGenre + "<br>"
+																		+ "Released " + song.releaseYear + "<br><br></tr>";
+									}
+									//if selected specific genre, filter
+									else if (song.musicGenre==selectedGenre) {
+										strTable += "<tr><b>" + song.title + "</b><br><br></tr>";
+									} 
+									
+								}) 
+								
+								strTable += "</table>";
+								//display!
+								document.getElementById("userDisplay").innerHTML =strTable;		
+				})			
+			}			
+		)
+	})
+	
+	
+</script>
 
-	
-	
-	</script>
+	<p><div id="rawString">Loading...</div></p>
+	<p><div id="userDisplay"></div></p>
+	<p><div id="userDisplay">
+		<form onsubmit="return false"> 
+			<select id="genreFilter" size="1">
+				<option> </option>
+				<option> Pop </option>
+				<option> Classic Rock </option>
+				<option> Alternative </option>
+				<option> New Wave </option>
+				<option> Rock </option>	
+			</select>	
+			<input type = "submit" value = "Filter" />
+		</form>
+	</div></p>
 </body>
 </html>
